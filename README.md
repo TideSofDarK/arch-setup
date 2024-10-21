@@ -35,7 +35,6 @@
 
 # NVIDIA Graphics
  * For 2000+ series cards install `nvidia-open-dkms`, otherwise use `nvidia-dkms`
- * Enable suspend and other services: `sudo systemctl enable nvidia-{suspend,resume,hibernate,powerd,persistenced}`
  * In case of poor performance add `nvidia-boost.service` to `/etc/systemd/system` and enable it `sudo systemctl enable --now nvidia-boost`. Adjust clocks in `nvidia-boost.service` based on output of `nvidia-smi -q -d SUPPORTED_CLOCKS` if needed.
  * Enable HDR: `export KWIN_DRM_ALLOW_NVIDIA_COLORSPACE=1` in `/etc/environment/`
  * Video acceleration: `yay -S libvdpau libva-nvidia-driver`
@@ -45,16 +44,21 @@
    Add these to `/etc/modprobe.d/nvidia.conf`
 
 ```
-   # Suspend fix
-   options nvidia NVreg_PreserveVideoMemoryAllocations=1
-   options nvidia NVreg_TemporaryFilePath=/var/tmp
-   # Setting it to 0 might help with slowdowns, setting it to 1 only works for 2000+ cards
-   options nvidia NVreg_EnableGpuFirmware=1
-   # Wayland fix
-   options nvidia_drm modeset=1
-   options nvidia_drm fbdev=1
+# Suspend fix
+options nvidia NVreg_PreserveVideoMemoryAllocations=1
+options nvidia NVreg_TemporaryFilePath=/var/tmp
+# Setting it to 0 might help with slowdowns, setting it to 1 only works for 2000+ cards
+options nvidia NVreg_EnableGpuFirmware=1
+# Wayland fix
+options nvidia_drm modeset=1
+options nvidia_drm fbdev=1
 ```
 
+</details>
+<details>
+   <summary>Enabling systemd services (redundant since 560.35.03-16)</summary>
+
+   `sudo systemctl enable nvidia-{suspend,resume,hibernate,powerd,persistenced}`
 </details>
 
 # Wine
