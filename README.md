@@ -7,10 +7,9 @@
  * Edit `/etc/pacman.conf` to enable colors, parallel downloads and `multilib` repo
  * Install `yay`: https://github.com/Jguer/yay
  * Packages: `yay -S --needed kdialog partitionmanager gwenview kcalc mpv blender krita steam qbittorrent telegram-desktop brave-bin p7zip kfind filelight spectacle unzip wl-clipboard ntfs-3g fuse2 fuse3 alsa-utils tuned tuned-ppd okular kdegraphics-mobipocket unrar ripgrep fd flatpak fwupd`
- * More packages: `yay -S --needed spoofdpi-bin qtcreator coppwr-bin obs-studio equibop-bin element-desktop brave-bin ttf-iosevka-nerd ttf-iosevkaterm-nerd fastfetch cmake ninja alacritty neovim bluez bluez-utils realtime-privileges ttf-vlgothic`
+ * More packages: `yay -S --needed qtcreator coppwr-bin obs-studio equibop-bin element-desktop brave-bin ttf-iosevka-nerd ttf-iosevkaterm-nerd fastfetch cmake ninja alacritty neovim bluez bluez-utils realtime-privileges ttf-vlgothic`
  * Enable Tuned with `sudo systemctl enable --now tuned` and `sudo systemctl enable --now tuned-ppd`
  * Enable Bluetooth with `sudo systemctl enable --now bluetooth.service`
- * Enable `spoofdpi` with `sudo systemctl enable --now spoofdpi.service` and add `--proxy-server=http://127.0.0.1:8080` to Chromium-based browsers
  * Auto-mount windows partition if any
  * Install Git Credential Manager: https://github.com/git-ecosystem/git-credential-manager
  * Clone Neovim and Alacritty configs
@@ -28,7 +27,6 @@
    export QT_SCALE_FACTOR_ROUNDING_POLICY=RoundPreferFloor
    export STEAM_FORCE_DESKTOPUI_SCALING=1.5
    ```
-
 # Intel Graphics
  * Vulkan driver: `yay -S vulkan-intel lib32-vulkan-intel`
  * Video acceleration: `yay -S intel-media-driver onevpl-intel-gpu libva-utils`
@@ -84,6 +82,16 @@ options nvidia_drm fbdev=1
 # Advanced Debugging With GDB
  * Install `debuginfod`: `yay -S debuginfod`
  * Add `set debuginfod enabled on` to `~/.gdbinit`
+
+# Censorship
+ * Spoofdpi: `yay -S spoofdpi-bin` then enable with `sudo systemctl enable --now spoofdpi.service` and add `--proxy-server=http://127.0.0.1:8080` to Chromium-based browsers
+ * Mullvad: `yay -S mullvad-vpn-bin`
+<details>
+   <summary>Notes on Mullvad</summary>
+
+Newer Mullvad app should work through WireGuard + Shadowsocks. Old way was to use OpenVPN + Shadowsocks:
+`mullvad-exclude sslocal -s 193.138.7.132:1300 -k mullvad -m chacha20-ietf-poly1305 -b 127.0.0.1:1080 --tcp-fast-open --tcp-no-delay --plugin v2ray-plugin --plugin-opts 'mode=quic;host=fi-hel-br-101.relays.mullvad.net'`
+</details>
 
 # MX Master 3S
  * This seems essential as this mouse prevents PC from sleeping properly unless the driver is installed
