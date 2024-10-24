@@ -88,6 +88,11 @@ options nvidia_drm fbdev=1
  * Mullvad: `yay -S mullvad-vpn-bin shadowsocks-v2ray-plugin v2ray`
  * To circumvent API access issues run `mullvad-exclude sslocal -s 193.138.7.132:1300 -k mullvad -m chacha20-ietf-poly1305 -b 127.0.0.1:1080 --tcp-fast-open --tcp-no-delay --plugin v2ray-plugin --plugin-opts 'mode=quic;host=fi-hel-br-101.relays.mullvad.net'` and add `SOCKS5 remote` method at `127.0.0.1:1080`
  * After signing in set tunnel protocol to WireGuard and obfuscation to Shadowsocks
+ * Create `/etc/sysctl.d/network.conf`:
+```
+net.core.rmem_max = 7500000
+net.core.wmem_max = 7500000
+```
 
 # MX Master 3S
  * This seems essential as this mouse prevents PC from sleeping properly unless the driver is installed
