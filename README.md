@@ -61,8 +61,9 @@ options nvidia_drm fbdev=1
 
 # Wine
  * Install: `yay -S wine wine-mono winetricks`
- * Install fonts: `winetricks corefonts` or `winetricks allfonts`
+ * Install fonts: `winetricks allfonts`
  * Guitar Pro 8 confirmed working
+ * Shutdown hang workaround: run `winecfg` and add `winedevice.exe` library then disable it
 
 # Steam
  * It's possible to use NTFS partition for game library
