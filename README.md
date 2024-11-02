@@ -75,6 +75,13 @@ options nvidia_drm fbdev=1
  * `rtirq` for RT or `threadirqs` enabled kernels: install with `yay -S rtirq` and run with `sudo systemctl enable --now rtirq`
  * Install audio DAW and plugins: `yay -S sws reaper reapack lsp-plugins-clap zam-plugins-clap surge-xt-clap ot-urchin-clap ot-cryptid-clap ob-xd-lv2 js80p jc303-clap dragonfly-reverb-clap cardinal-clap dexed-clap libgme`
  * Reaper setup: edit `ui_scale=*` in `~/.config/REAPER/reaper.ini` and manually add `/usr/lib/vst3/` to VST path
+ * Potential improvements (check if lower than 2048 by default):
+```
+sudo -i
+echo 2048 > /sys/class/rtc/rtc0/max_user_freq
+echo 2048 > /proc/sys/dev/hpet/max-user-freq
+```
+ * TuneD has latency-oriented profiles
 
 # Development
  * Extract Vulkan SDK to `~/Tools/VulkanSDK/1.x.xxx` and symlink it to `current`, then add `source ~/Tools/VulkanSDK/current/setup-env.sh` to `~/.bash_profile`
