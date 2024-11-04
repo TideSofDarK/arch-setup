@@ -10,6 +10,7 @@
  * More packages: `yay -S --needed qtcreator coppwr-bin obs-studio equibop-bin element-desktop brave-bin ttf-iosevka-nerd ttf-iosevkaterm-nerd fastfetch cmake ninja alacritty neovim bluez bluez-utils realtime-privileges ttf-vlgothic`
  * Enable Tuned with `sudo systemctl enable --now tuned` and `sudo systemctl enable --now tuned-ppd`
  * Enable Bluetooth with `sudo systemctl enable --now bluetooth.service`
+ * Consider lowering `TimeouStopSec` in `/usr/lib/systemd/system/user@.service` to prevent slow shutdowns
  * Auto-mount windows partition if any
  * Install Git Credential Manager: https://github.com/git-ecosystem/git-credential-manager
  * Clone Neovim and Alacritty configs
