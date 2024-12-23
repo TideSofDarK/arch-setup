@@ -6,7 +6,7 @@
  * Edit `/etc/makepkg.conf` to disable debug packages
  * Edit `/etc/pacman.conf` to enable colors, parallel downloads and `multilib` repo
  * Install `yay`: https://github.com/Jguer/yay
- * Packages: `yay -S --needed kdialog partitionmanager gwenview kcalc mpv blender krita steam qbittorrent telegram-desktop brave-bin p7zip kfind filelight spectacle unzip wl-clipboard ntfs-3g fuse2 fuse3 alsa-utils tuned tuned-ppd okular kdegraphics-mobipocket unrar ripgrep fd flatpak fwupd`
+ * Packages: `yay -S --needed kdialog partitionmanager gwenview kcalc mpv blender krita steam qbittorrent telegram-desktop brave-bin 7zip kfind filelight spectacle unzip wl-clipboard ntfs-3g fuse2 fuse3 alsa-utils tuned tuned-ppd okular kdegraphics-mobipocket unrar ripgrep fd flatpak fwupd`
  * More packages: `yay -S --needed qtcreator coppwr-bin obs-studio equibop-bin element-desktop brave-bin ttf-iosevka-nerd ttf-iosevkaterm-nerd fastfetch cmake ninja alacritty neovim bluez bluez-utils realtime-privileges ttf-vlgothic`
  * Enable Tuned with `sudo systemctl enable --now tuned` and `sudo systemctl enable --now tuned-ppd`
  * Enable Bluetooth with `sudo systemctl enable --now bluetooth.service`
