@@ -1,5 +1,6 @@
-# Installation
- * BTRFS: `@.snapshots` subvolume is not needed for Timeshift snapshots
+# BTRFS
+ * `@.snapshots` subvolume is not needed for Timeshift snapshots
+ * [Recover unmountable filesystem](https://en.opensuse.org/SDB:BTRFS#How_to_repair_a_broken/unmountable_btrfs_filesystem)
 
 # General
  * Enable periodic TRIM: `sudo systemctl enable fstrim.timer`
